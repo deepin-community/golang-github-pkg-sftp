@@ -1,0 +1,31 @@
+Source: golang-github-pkg-sftp
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Anthony Fok <foka@debian.org>
+Section: devel
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               golang-github-kr-fs-dev (>= 0.1.0),
+               golang-github-pkg-errors-dev (>= 0.8.1),
+               golang-github-stretchr-testify-dev (>= 1.4.0),
+               golang-golang-x-crypto-dev (>= 1:0.0~git20190820.60c769a)
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-pkg-sftp
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-pkg-sftp.git
+Homepage: https://github.com/pkg/sftp
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/pkg/sftp
+
+Package: golang-github-pkg-sftp-dev
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         golang-github-kr-fs-dev (>= 0.1.0),
+         golang-github-pkg-errors-dev (>= 0.8.1),
+         golang-golang-x-crypto-dev (>= 1:0.0~git20190820.60c769a)
+Description: SFTP support for the golang.org/x/crypto/ssh package
+ The sftp package provides support for file system operations on
+ remote ssh servers using the SFTP subsystem.  It also implements an
+ SFTP server for serving files from the filesystem.

@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+export DH_GOLANG_INSTALL_EXTRA := LICENSE
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_install:
+	dh_auto_install -O--buildsystem=golang
+	# Don't install example binaries
+	rm -rf debian/golang-github-pkg-sftp-dev/usr/bin
